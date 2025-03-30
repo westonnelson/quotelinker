@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 215 65% 33%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 20 92% 65%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 210 33% 96%;
+    --accent-foreground: 215 65% 33%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 215 65% 33%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 215 65% 33%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 20 92% 65%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 215 65% 33%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.gradient-background {
+  background: linear-gradient(135deg, #f5f8fa 0%, #edf1f5 100%);
+}
+
+.link-hover {
+  @apply transition-colors hover:text-primary;
+}
+
+/* Multi-step form styles */
+.step-indicator {
+  @apply flex items-center justify-between w-full max-w-2xl mx-auto mb-8;
+}
+
+.step-indicator-item {
+  @apply flex flex-col items-center relative px-2;
+}
+
+.step-indicator-item::before {
+  content: "";
+  @apply absolute top-4 right-1/2 w-full h-1 bg-muted;
+}
+
+.step-indicator-item:first-child::before {
+  @apply hidden;
+}
+
+.step-indicator-item:last-child::before {
+  @apply hidden;
+}
+
+.step-indicator-bubble {
+  @apply flex items-center justify-center w-8 h-8 rounded-full text-sm font-medium bg-muted text-muted-foreground z-10;
+}
+
+.step-indicator-bubble.active {
+  @apply bg-primary text-primary-foreground;
+}
+
+.step-indicator-bubble.completed {
+  @apply bg-primary text-primary-foreground;
+}
+
+.step-indicator-label {
+  @apply mt-2 text-xs font-medium text-muted-foreground text-center;
+}
+
+.step-indicator-label.active {
+  @apply text-foreground;
+}
+
+.step-indicator-label.completed {
+  @apply text-foreground;
+}
+
+/* Add a custom class for soft gradient cards */
+.soft-gradient-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  @apply shadow-md rounded-xl border border-border/50;
+}
+
+/* Add responsive form styles */
+.form-container {
+  @apply p-4 sm:p-6 md:p-8 rounded-lg border bg-card shadow-sm;
+}
+
+.form-field {
+  @apply mb-4;
+}
+
+.form-field-label {
+  @apply block text-sm font-medium mb-1;
+}
+
+.form-field-input {
+  @apply w-full rounded-md border border-input bg-background px-3 py-2;
+}
+
+/* Improve mobile padding */
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+}
+
