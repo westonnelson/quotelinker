@@ -1,3 +1,5 @@
+'use client'
+
 import { useQuote } from '@/context/QuoteContext'
 import Link from 'next/link'
 import { FaCheckCircle, FaEnvelope, FaPhone } from 'react-icons/fa'

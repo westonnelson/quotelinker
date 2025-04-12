@@ -1,3 +1,5 @@
+'use client'
+
 import { useQuote } from '@/context/QuoteContext'
 import { TermLength } from '@/types/quote'
 

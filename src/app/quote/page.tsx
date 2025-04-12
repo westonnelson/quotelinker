@@ -1,3 +1,5 @@
+'use client'
+
 import { QuoteProvider } from '@/context/QuoteContext'
 import ProgressTracker from '@/components/quote/ProgressTracker'
 import GenderStep from '@/components/quote/steps/GenderStep'

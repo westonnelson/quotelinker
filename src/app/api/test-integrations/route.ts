@@ -17,7 +17,8 @@ export async function GET() {
       .select('*')
       .limit(1);
 
-    if (supabaseError) {
+    // If the table doesn't exist, that's okay - we just want to verify the connection
+    if (supabaseError && supabaseError.code !== 'PGRST116') {
       throw new Error(`Supabase error: ${supabaseError.message}`);
     }
 
