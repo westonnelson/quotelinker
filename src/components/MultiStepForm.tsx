@@ -301,7 +301,7 @@ export default function MultiStepForm() {
   }
 
   // Handle checkbox group change
-  const handleCheckboxGroupChange = (name, value, checked) => {
+  const handleCheckboxGroupChange = (name: string, value: string, checked: boolean) => {
     const currentValues = formData[name] || []
     
     if (checked) {
