@@ -284,7 +284,7 @@ export default function MultiStepForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   // Handle input change
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type, checked } = e.target
     setFormData({
       ...formData,
