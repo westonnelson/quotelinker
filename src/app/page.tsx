@@ -298,9 +298,4 @@ export default function Home() {
       </section>
     </div>
   )
-}
-
-export const metadata = {
-  title: 'QuoteLinker – Life Insurance Made Easy',
-  description: 'Get personalized life insurance quotes instantly. Compare top providers and find the perfect coverage for your needs.',
 } 
