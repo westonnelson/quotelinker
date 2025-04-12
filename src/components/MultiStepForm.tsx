@@ -7,7 +7,7 @@ import { useQuote } from '@/context/QuoteContext'
 interface FormField {
   id: string
   label: string
-  type: 'text' | 'email' | 'tel' | 'date' | 'number' | 'select' | 'checkbox'
+  type: 'text' | 'email' | 'tel' | 'date' | 'number' | 'select' | 'checkbox' | 'radio'
   required?: boolean
   min?: number
   max?: number
@@ -484,6 +484,9 @@ export default function MultiStepForm() {
             ))}
           </div>
         )
+      
+      default:
+        return null
     }
   }
 
