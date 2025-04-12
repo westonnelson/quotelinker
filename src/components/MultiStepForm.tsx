@@ -18,7 +18,6 @@ interface FormField {
 interface FormStep {
   id: string
   title: string
-  description: string
   icon: React.ReactNode
   fields: FormField[]
 }
@@ -28,7 +27,7 @@ interface FormData {
 }
 
 // Form steps data
-const formSteps = [
+const formSteps: FormStep[] = [
   {
     id: 'basic-info',
     title: 'Basic Information',
