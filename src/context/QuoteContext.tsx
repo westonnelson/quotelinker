@@ -1,3 +1,5 @@
+'use client'
+
 import { createContext, useContext, useReducer, ReactNode } from 'react'
 import { QuoteFormData, QuoteStep } from '@/types/quote'
 
