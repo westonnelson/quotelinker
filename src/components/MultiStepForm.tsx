@@ -24,7 +24,7 @@ interface FormStep {
 }
 
 interface FormData {
-  [key: string]: string | string[] | boolean
+  [key: string]: string | boolean | string[]
 }
 
 // Form steps data
@@ -309,37 +309,34 @@ export default function MultiStepForm() {
   // Handle input change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target
-    const checked = (e.target as HTMLInputElement).type === 'checkbox' ? (e.target as HTMLInputElement).checked : false
+    const isCheckbox = type === 'checkbox'
+    const checked = isCheckbox ? (e.target as HTMLInputElement).checked : false
     
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? checked : value || ''
-    })
+    setFormData(prev => ({
+      ...prev,
+      [name]: isCheckbox ? checked : value
+    }))
     
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors({
-        ...errors,
-        [name]: null
-      })
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }))
     }
   }
 
   // Handle checkbox group change
   const handleCheckboxGroupChange = (name: string, value: string, checked: boolean) => {
-    const currentValues = formData[name] || []
-    
-    if (checked) {
-      setFormData({
-        ...formData,
-        [name]: [...currentValues, value]
-      })
-    } else {
-      setFormData({
-        ...formData,
-        [name]: currentValues.filter(val => val !== value)
-      })
-    }
+    setFormData(prev => {
+      const currentValues = (prev[name] as string[]) || []
+      return {
+        ...prev,
+        [name]: checked 
+          ? [...currentValues, value]
+          : currentValues.filter(val => val !== value)
+      }
+    })
   }
 
   // Validate current step
