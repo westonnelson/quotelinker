@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Shield -->
+  <path d="M25 5L5 15V25C5 35 15 45 25 45C35 45 45 35 45 25V15L25 5Z" fill="#4F46E5" />
+  
+  <!-- Q Letter -->
+  <path d="M20 15C20 12.2386 22.2386 10 25 10C27.7614 10 30 12.2386 30 15C30 17.7614 27.7614 20 25 20C22.2386 20 20 17.7614 20 15ZM25 8C21.134 8 18 11.134 18 15C18 18.866 21.134 22 25 22C28.866 22 32 18.866 32 15C32 11.134 28.866 8 25 8Z" fill="white" />
+  <path d="M30 25L35 30" stroke="white" stroke-width="2" stroke-linecap="round" />
+  
+  <!-- L Letter -->
+  <path d="M40 15H45V35H40V15Z" fill="white" />
+  <path d="M40 35H50" stroke="white" stroke-width="2" stroke-linecap="round" />
+  
+  <!-- Text -->
+  <text x="60" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#4F46E5">QuoteLinker</text>
+</svg> 
