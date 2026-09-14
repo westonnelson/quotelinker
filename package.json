@@ -29,5 +29,11 @@
     "eslint-config-next": "14.0.0",
     "postcss": "^8",
     "typescript": "^5"
+  },
+  "overrides": {
+    "js-yaml": "4.3.1"
+  },
+  "resolutions": {
+    "js-yaml": "4.3.1"
   }
-} 
+}
